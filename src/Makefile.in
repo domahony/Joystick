@@ -89,7 +89,9 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
-am_js_OBJECTS = main2.$(OBJEXT) Motor.$(OBJEXT) Chassis.$(OBJEXT)
+am_js_OBJECTS = main2.$(OBJEXT) Motor.$(OBJEXT) Chassis.$(OBJEXT) \
+	Adafruit_PWMServoDriver.$(OBJEXT) \
+	Adafruit_MotorShield.$(OBJEXT) Wire.$(OBJEXT)
 js_OBJECTS = $(am_js_OBJECTS)
 js_DEPENDENCIES =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -236,7 +238,7 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-js_SOURCES = main2.cc Motor.cpp Chassis.cpp
+js_SOURCES = main2.cc Motor.cpp Chassis.cpp Adafruit_PWMServoDriver.cpp Adafruit_MotorShield.cpp Wire.cpp
 AM_CXXFLAGS = -I/home/domahony/WiringPI/local/include
 js_LDADD = -L/home/domahony/WiringPI/lib/ -lwiringPi -lwiringPiDev
 all: all-am
@@ -326,8 +328,11 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Adafruit_MotorShield.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Adafruit_PWMServoDriver.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Chassis.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Motor.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/Wire.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/main2.Po@am__quote@
 
 .cc.o:

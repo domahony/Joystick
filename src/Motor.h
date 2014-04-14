@@ -8,6 +8,8 @@
 #ifndef MOTOR_H_
 #define MOTOR_H_
 
+#include "Adafruit_MotorShield.h"
+
 struct Range {
 	Range(const int& min, const int& max) : min(min), max(max) {}
 	int min;
@@ -16,17 +18,15 @@ struct Range {
 
 class Motor {
 public:
-	Motor(const int p1, const int p2, const int sp, Range in, Range out);
+	Motor(Adafruit_DCMotor* m, Range in, Range out);
 	virtual ~Motor();
 
 	void setSpeed(const int& sp);
 
 private:
-	int inPin1;
-	int inPin2;
-	int speedPin;
 	Range input;
 	Range output;
+	Adafruit_DCMotor *_motor;
 };
 
 #endif /* MOTOR_H_ */

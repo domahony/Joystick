@@ -105,23 +105,23 @@ static void handle_abs(Chassis& chassis, const struct input_event& ie)
 	case ABS_HAT0X:
 
 		if (ie.value == 0) {
-			chassis.set_direction(FORWARD);
+			chassis.set_direction(_FORWARD);
 			chassis.set_speed(0);
 		} else if (ie.value < 0) {
-			chassis.set_direction(LEFT);
+			chassis.set_direction(_LEFT);
 		} else {
-			chassis.set_direction(RIGHT);
+			chassis.set_direction(_RIGHT);
 		}
 
 		break;
 	case ABS_HAT0Y:
 		if (ie.value == 0) {
-			chassis.set_direction(FORWARD);
+			chassis.set_direction(_FORWARD);
 			chassis.set_speed(0);
 		} else if (ie.value > 0) {
-			chassis.set_direction(BACKWARD);
+			chassis.set_direction(_BACKWARD);
 		} else {
-			chassis.set_direction(FORWARD);
+			chassis.set_direction(_FORWARD);
 		}
 
 		break;
