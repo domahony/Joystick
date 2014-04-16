@@ -1,6 +1,12 @@
 # http://www.gnu.org/software/automake
 
 Makefile.in
+Makefile
+config.log
+config.status
+.deps
+*.o
+js
 
 # http://www.gnu.org/software/autoconf
 
