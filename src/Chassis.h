@@ -29,6 +29,8 @@ public:
 		right_rear(afms.getMotor(4), Range(0, 128), Range(0, 255)),
 		speed(0), direction(_FORWARD) {
 
+		afms.begin(60);
+
 	}
 
 	void set_speed(const int& sp) {
